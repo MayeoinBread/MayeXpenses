@@ -1,0 +1,48 @@
+﻿<Page
+    x:Class="MayeXpenses.Settings"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MayeXpenses"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton x:Name="Save" Icon="Accept" Label="Save" Click="Save_Click"/>
+            <AppBarButton x:Name="Cancel" Icon="Cancel" Label="Cancel" Click="Cancel_Click"/>
+        </CommandBar>
+    </Page.BottomAppBar>
+
+    <ScrollViewer Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel x:Name="ContentPanel">
+            <TextBlock Margin="16,8" TextWrapping="Wrap" Text="Settings" FontSize="{StaticResource TextStyleExtraLargeFontSize}"/>
+            <ComboBox x:Name="CbbCurr" Margin="16,8" Header="Default Currency:" SelectedIndex="0">
+                <ComboBoxItem Content="€"/>
+                <ComboBoxItem Content="£"/>
+                <ComboBoxItem Content="$"/>
+                <ComboBoxItem Content="¥"/>
+            </ComboBox>
+
+            <ComboBox x:Name="CbbDate" Margin="16,8" Header="Default Date Format:" SelectedIndex="0">
+                <ComboBoxItem Content="dd/MM/yyyy"/>
+                <ComboBoxItem Content="dd/MM/yy"/>
+                <ComboBoxItem Content="dd/MM"/>
+                <ComboBoxItem Content="MM/dd/yyyy"/>
+                <ComboBoxItem Content="MM/dd/yy"/>
+                <ComboBoxItem Content="MM/dd"/>
+            </ComboBox>
+
+            <TextBlock Margin="16,32,16,8" TextWrapping="Wrap" Text="Exchange Rates:" FontSize="{StaticResource TextStyleExtraLargeFontSize}"/>
+
+            <TextBox x:Name="TbEurPnd" Width="180" Margin="16,0,8,0" HorizontalAlignment="Left" InputScope="Number" PlaceholderText="1.00" Header="€ -&gt; £"/>
+            <TextBox x:Name="TbEurDol" Width="180" Margin="16,8,8,0" HorizontalAlignment="Left" InputScope="Number" PlaceholderText="1.00" Header="€ -&gt; $"/>
+            <TextBox x:Name="TbEurYen" Width="180" Margin="16,8,8,0" HorizontalAlignment="Left" InputScope="Number" PlaceholderText="1.00" Header="€ -&gt; ¥"/>
+            <TextBox x:Name="TbPndDol" Width="180" Margin="16,8,8,0" HorizontalAlignment="Left" InputScope="Number" PlaceholderText="1.00" Header="£ -&gt; $"/>
+            <TextBox x:Name="TbPndYen" Width="180" Margin="16,8,8,0" HorizontalAlignment="Left" InputScope="Number" PlaceholderText="1.00" Header="£ -&gt; ¥"/>
+            <TextBox x:Name="TbDolYen" Width="180" Margin="16,8,8,0" HorizontalAlignment="Left" InputScope="Number" PlaceholderText="1.00" Header="$ -&gt; ¥"/>
+        </StackPanel>
+    </ScrollViewer>
+</Page>
+
+    
